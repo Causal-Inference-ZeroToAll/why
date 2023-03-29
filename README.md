@@ -1,335 +1,53 @@
-<h1 align="center">
-<img src="./fig/YLearn1.png" width="400" align=center/>
-</h1><br>
+# Why工具包 - 你的因果问题解决神器
 
-[中文](https://github.com/DataCanvasIO/YLearn/blob/main/README_zh_CN.md)  
+[//]: # (请帮我写一个工具包的介绍，以下是相关信息)
 
-**YLearn**, a pun of "learn why", is a python package for causal inference which supports various aspects of causal inference ranging from causal effect identification, estimation, and causal graph discovery, etc.
+[//]: # (我们的推理工具包名字叫做 why, 他的使命是成为最用户友好的回答因果问题的专业工具，同时其框架设计具备极大的灵活性和可扩展性，)
 
-**Documentation website**: <https://ylearn.readthedocs.io>
+[//]: # (便于开发者方便快捷的定制因果推理算法。最终成为一个 Causal chatGPT。)
 
-**中文文档地址**：<https://ylearn.readthedocs.io/zh_CN/latest/>
 
-## Installation
 
-### Pip
+Why工具包是一款专业的因果推理工具，旨在帮助用户以最友好的方式回答因果问题。该工具包以其灵活性和可扩展性脱颖而出，为开发者提供了一个简便快捷的平台来定制因果推理算法。Why的终极目标是成为一个具有广泛应用价值的因果ChatGPT。
 
-The simplest way of installing YLearn is using `pip`:
 
-```bash
-pip install ylearn
-```
+特点：
 
-Note that `Graphviz`  is required to plot causal graph in notebook, so install it before running YLearn. See https://graphviz.org/download/ for more details about `Graphviz` installation.
+- 用户友好：Why工具包的设计理念是让用户在寻求因果关系解答时能够轻松上手。通过简洁明了的界面和操作指引，即使是非专业人士也能轻松掌握如何使用Why工具包。
 
+- 极高的灵活性：Why工具包的框架设计允许用户根据实际需求对因果推理算法进行调整。无论是简单的因果关系判断还是复杂的因果网络分析，Why工具包都能为您提供专业的解决方案。
 
-### Conda
+- 可扩展性：为了满足不断发展的因果推理领域，Why工具包提供了便捷的扩展接口，允许开发者无缝地集成新的算法和功能。这意味着Why工具包具有很高的发展潜力，能够跟上技术发展的步伐。
 
-YLearn can also be installed with `conda`. Install it from the channel *conda-forge*:
+- 开发者友好：Why工具包鼓励开发者参与其中，通过提供丰富的文档和示例代码，使得开发者能够快速上手，进行因果推理算法的定制和优化。
 
-```bash
-conda install -c conda-forge ylearn
-```
+- Causal ChatGPT：作为一个具有广泛应用价值的因果ChatGPT，Why工具包的长远目标是实现因果关系的自然语言处理和推理，从而为各种业务场景提供智能化的因果关系解决方案。
 
-This will install YLearn and  all requirements including `Graphviz`.
+应用场景：
 
+Why工具包适用于各种场景，包括但不限于：
 
-### Docker
+- 数据科学家和分析师：为了更好地理解数据背后的因果关系，以便进行预测和决策。
+- 企业家和管理者：为了评估策略调整的影响，从而优化业务运营。
+- 教育和研究人员：为了探讨因果关系的理论和实践，进一步推动因果推理领域的发展。
+- 软件开发者：为了集成因果推理功能到各种应用程序，提高产品竞争力。
 
-We also publish an image in Docker Hub which can be downloaded directly and includes the components:
+总结：
 
-* Python 3.8
-* YLearn and its dependent packages
-* JupyterLab
+Why工具包为因果推理领域带来了一款强大的解决方案。凭借其用户友好、灵活性和可扩展性等特点，它为用户提供了一个便捷的平台，帮助他们更深入地挖掘因果关系。通过持续优化和扩展，Why工具包致力于实现自然语言处理和推理的因果ChatGPT，为各行业提供智能化的因果关系解决方案。
 
+未来发展：
 
-Download the docker image:
+随着因果推理技术的不断发展，Why工具包将继续努力提高性能和适用性。未来的发展方向包括：
 
-```bash
-docker pull datacanvas/ylearn
-```
+- 更强大的算法支持：不断完善和优化现有算法，同时引入更多先进的因果推理算法，以满足各种复杂场景的需求。
 
-Run a docker container:
+- 深度学习与自然语言处理的结合：通过结合深度学习和自然语言处理技术，让Why工具包能够更智能地理解和分析用户的因果问题。
 
-```bash
-docker run -ti -e NotebookToken="your-token" -p 8888:8888 datacanvas/ylearn
-```
+- 更广泛的行业应用：积极拓展Why工具包在各行业的应用，例如医疗、金融、市场营销等领域，以满足不同行业对因果关系分析的需求。
 
-Then one can visit http://&lt;ip-addr&gt;:8888 in the browser and type in the token to start.
+- 社区支持与合作：建立活跃的开发者社区，鼓励用户分享经验和代码，为Why工具包的发展提供宝贵的建议和支持。同时，寻求与相关机构和企业的合作，共同推动因果推理技术的发展。
 
+- 教育与培训：提供详细的教程和实例，帮助用户更快地学习和掌握Why工具包。同时，开展线上和线下的培训活动，提高因果推理领域的普及率和认知度。
 
-## Overview of YLearn
-
-Machine learning has made great achievements in recent years.
-The areas in which machine learning succeeds are mainly for prediction,
-e.g., the classification of pictures of cats and dogs. However, machine learning is incapable of answering some
-questions that naturally arise in many scenarios. One example is for the **counterfactual questions** in policy
-evaluations: what would have happened if the policy had changed? Due to the fact that these counterfactuals can
-not be observed, machine learning models, the prediction tools, can not be used. These incapabilities of machine
-learning partly give rise to applications of causal inference in these days.
-
-Causal inference directly models the outcome of interventions and formalizes the counterfactual reasoning.
-With the aid of machine learning, causal inference can draw causal conclusions from observational data in
-various manners nowadays, rather than relying on conducting craftly designed experiments.
-
-A typical complete causal inference procedure is composed of three parts. *First*, it learns causal relationships
-using the technique called causal discovery. These relationships are then expressed either in the form of Structural
-Causal Models or Directed Acyclic Graphs (DAG). *Second*, it expresses the causal estimands, which are clarified by the
-interested causal questions such as the average treatment effects, in terms of the observed data. This process is
-known as identification. *Finally*, once the causal estimand is identified, causal inference proceeds to focus on
-estimating the causal estimand from observational data. Then policy evaluation problems and counterfactual questions
-can also be answered.
-
-YLearn, equipped with many techniques developed in recent literatures, is implemented to **support the whole causal inference pipeline from causal discovery to causal estimand estimation with the help of machine learning**. This is more promising especially when there are abundant observational data.
-
-### Concepts in YLearn
-
-![Concepts in YLearn](./fig/structure_ylearn.png#pic_center)
-
-There are 5 main concepts in YLearn corresponding to the causal inference pipeline.
-
-1. *CausalDiscovery*. Discovering the causal relationships in the observational data.
-
-2. *CausalModel*. Representing the causal relationships in the form of ``CausalGraph`` and doing other related operations such as identification with ``CausalModel``.
-
-3. *EstimatorModel*. Estimating the causal estimand with various techniques.
-
-4. *Policy*. Selecting the best policy for each individual.
-
-5. *Interpreter*. Explaining the causal effects and polices.
-
-These components are connected to give a full pipeline of causal inference, which are also encapsulated into a single API `Why`.
-
-### Pipeline in YLearn
-
-![A typical pipeline in YLearn](./fig/flow.png#pic_center)
-*The pipeline of causal inference in YLearn.*
-
-Starting from the training data:
-
-1. One first uses the `CausalDiscovery` to reveal the causal structures in data, which will usually output a `CausalGraph`.
-2. The causal graph is then passed into the `CausalModel`, where
-the interested causal effects are identified and converted into statistical estimands.
-3. An `EstimatorModel` is then trained with the training data
-to model relationships between causal effects and other variables, i.e., estimating causal effects in training data.
-4. One can then use the trained `EstimatorModel` to predict causal effects in some new test dataset and evaluate the policy assigned to each individual or interpret the estimated causal effects.
-
-It is also helpful to use the following flow chart in many causal inference tasks
-
-![Helpful flow chart when using YLearn](./fig/flow_chart.png#pic_center)
-
-## Quick Start
-
-In this part, we first show several simple example usages of YLearn. These examples cover the most common functionalities. Then we present a case stuy with `Why` to unveil the hidden
-causal relations in data.
-
-### Example usages
-
-We present several necessary example usages of YLearn in this section, which covers defining a causal graph, identifying the causal effect, and training an estimator model, etc. Please see their specific documentations for more details.
-
-1. **Representation of the causal graph**
-
-   Given a set of variables, the representation of its causal graph in YLearn *requires a python `dict` to denote the causal relations of variables*, in which the *keys* of the `dict` are children of all elements in the corresponding *values* where each *value* usually should be a list of names of variables. For an instance, in the simplest case, for a given causal graph `X <- W -> Y`, we first define a python `dict` for the causal relations, which will then be passed to `CausalGraph` as a parameter:
-
-    ```python
-        causation = {'X': ['W'], 'W':[], 'Y':['W']}
-        cg = CausalGraph(causation=causation)
-    ```
-
-   `cg` will be the causal graph encoding the causal relation `X <- W -> Y` in YLearn. If there exist *unobserved confounders* in the causal graph, then, aside from the observed variables, we should also define a python `list` containing these causal relations. For example, a causal graph with unobserved confounders (green nodes)
-
-    <img src="./fig/graph_expun.png" width="400">
-
-   is first converted into a graph with latent confounding arcs (black dotted llines with two directions)
-
-    <img src="./fig/graph_un_arc.png" width="500">
-
-   To represent such causal graph, we should
-
-   **(1)** define a python `dict` to represent the observed parts, and
-
-   **(2)** define a `list` to encode the latent confounding arcs where each element in the `list` includes the names of the start node and the end node of a latent confounding arc:
-
-   ```python
-        from ylearn.causal_model.graph import CausalGraph
-        
-        # define the dict to represent the observed parts
-        causation_unob = {
-            'X': ['Z2'],
-            'Z1': ['X', 'Z2'],
-            'Y': ['Z1', 'Z3'],
-            'Z3': ['Z2'],
-            'Z2': [], 
-        }
-        
-        # define the list to encode the latent confounding arcs for unobserved confounders
-        arcs = [('X', 'Z2'), ('X', 'Z3'), ('X', 'Y'), ('Z2', 'Y')]
-
-        cg_unob = CausalGraph(causation=causation_unob, latent_confounding_arcs=arcs)
-   ```
-
-2. **Identification of causal effect**
-
-   It is crucial to identify the causal effect when we want to estimate it from data. The first step for identifying the causal effect is identifying the causal estimand. This can be easily done in YLearn. For an instance, suppose that we are interested in identifying the causal estimand `P(Y|do(X=x))` in the causal graph `cg` defined above, then we can simply define an instance of `CausalModel` and call the `identify()` method:
-
-   ```python
-        cm = CausalModel(causal_graph=cg)
-        cm.identify(treatment={'X'}, outcome={'Y'}, identify_method=('backdoor', 'simple'))
-   ```
-
-    where we use the *backdoor-adjustment* method here by specifying `identify_method=('backdoor', 'simple')`. YLearn also supports front-door adjustment, finding instrumental variables, and, most importantly, the general identification method developed in [1] which is able to identify any causal effect if it is identifiable. For an example, given the following causal graph,
-    
-    <img src="./fig/id_fig.png" width="300">
-
-    if we want to identify `P(Y1, Y2|do(X))`, racalling that black dotted lines with two directions are latent confounding arcs (i.e., there is an unobserved confounder pointing to the two end nodes of each black dotted line), we can apply YLearn as follows
-
-    ```python
-       causation = {
-            'W1': [],
-            'W2': [],
-            'X': ['W1'],
-            'Y1': ['X'],
-            'Y2': ['W2']
-        }
-        arcs = [('W1', 'Y1'), ('W1', 'W2'), ('W1', 'Y2'), ('W1', 'Y1')]
-        cg = graph.CausalGraph(causation, latent_confounding_arcs=arcs)
-        cm = model.CausalModel(cg)
-        p = cm.id({'Y1', 'Y2'}, {'X'})
-        p.show_latex_expression()
-    ```
-
-    which will give us the identified causal effect `P(Y1, Y2|X)` as follows
-
-    <img src="./fig/latex_exp.png" width="400">
-
-    and calling the method `p.parse()` will give us the latex expression
-
-    ```
-    \sum_{W2}\left[\left[P(Y2|W2)\right]\right]\left[\sum_{W1}\left[P(W1)\right]\left[P(Y1|X, W1)\right]\right]\left[P(W2)\right]
-    ```
-
-
-
-3. **Instrumental variables**
-
-   Instrumental variable is an important technique in causal inference. The approach of using YLearn to find valid instrumental variables is very straightforward. For example, suppose that we have a causal graph
-
-    <img src="./fig/iv2.png" width="400">,
-
-   we can follow the common procedure of utilizing identify methods of `CausalModel` to find the instrumental variables: (1) define the `dict` and `list` of the causal relations; (2) define an instance of `CausalGraph` to build the related causal graph in YLearn; (3) define an instance of `CausalModel` with the instance of `CausalGraph` in last step being the input; (4) call the `get_iv()` method of `CausalModel` to find the instrumental variables
-
-   ```python
-        causation = {
-            'p': [],
-            't': ['p', 'l'],
-            'l': [],
-            'g': ['t', 'l']
-        }
-        arc = [('t', 'g')]
-        cg = CausalGraph(causation=causation, latent_confounding_arcs=arc)
-        cm = CausalModel(causal_graph=cg)
-        cm.get_iv('t', 'g')
-   ```
-
-4. **Estimation of causal effect**
-
-   The estimation of causal effects in YLearn is also fairly easy. It follows the common approach of deploying a machine learning model since YLearn focuses on the intersection of machine learning and causal inference in this part. Given a dataset, one can apply any `EstimatorModel` in YLearn with a procedure composed of 3 distinct steps:
-
-    * Given data in the form of  `pandas.DataFrame`, find the names of `treatment, outcome, adjustment, covariate`.
-    * Call  `fit()` method of  `EstimatorModel` to train the model with the names of treatment, outcome, and adjustment specified in the first step.
-    * Call  `estimate()` method of  `EstimatorModel` to estimate causal effects in test data.
-
-    One can refer to the documentation website for [methodologies](https://ylearn.readthedocs.io/en/latest/sub/est.html#) of many estimator models implemented by YLearn.
-
-5. **Using the all-in-one API: Why**
-
-    For the purpose of *applying YLearn in a unified and easier manner*, YLearn provides the API `Why`. `Why` is an API which encapsulates almost everything in YLearn, such as identifying causal effects and scoring a trained estimator model. To use `Why`, one should first create an instance of `Why` which needs to be trained by calling its method `fit()`, after which other utilities, such as `causal_effect()`, `score()`, and `whatif()`, can be used. This procedure is illustrated in the following code example:
-
-    ```python
-        from sklearn.datasets import fetch_california_housing
-
-        from ylearn import Why
-
-        housing = fetch_california_housing(as_frame=True)
-        data = housing.frame
-        outcome = housing.target_names[0]
-        data[outcome] = housing.target
-
-        why = Why()
-        why.fit(data, outcome, treatment=['AveBedrms', 'AveRooms'])
-
-        print(why.causal_effect())
-    ```
-
-### Case Study
-
-In the notebook [CaseStudy](https://github.com/DataCanvasIO/YLearn/blob/main/example_usages/case_study_bank.ipynb), we utilize a typical bank customer dataset to further demonstrate the usage of the all-in-one API `Why` of YLearn. `Why` covers the full processing pipeline of causal learning, including causal discovery, causal effect identification, causal effect estimation, counterfactual inference, and policy learning. Please refer to [CaseStudy](https://github.com/DataCanvasIO/YLearn/blob/main/example_usages/case_study_bank.ipynb) for more details.
-
-## Contributing
-
-We welcome community contributors to the project. Before you start, please firstly read our [code of conduct](CODE_OF_CONDUCT.md) and [contributing guidelines](CONTRIBUTING.md).
-
-## Communication
-
-We provide several communcication channels for developers.
-- GitHub [Issues](https://github.com/DataCanvasIO/YLearn/issues) and [Discussions](https://github.com/DataCanvasIO/YLearn/discussions)
-- Email: ylearn@zetyun.com
-- Slack [Workspace](https://join.slack.com/t/ylearnworkspace/shared_invite/zt-1dvi5e8cz-yHwN2OTIDX0gWsfPRgB9ZQ)
-- WeChat group: join by scanning the below QRcode.
-
-   <img src="./fig/wechat_QRcode.png" width="200">
-
-##  Citation
-
-If you use YLearn in your research, please cite us as follows:
-
-Bochen Lyu, Xuefeng Li, Jian Yang.  
-**YLearn: A Python Package for Causal Inference.** 
-https://github.com/DataCanvasIO/YLearn, 2022. Version 0.2.x.
-
-BibTex:
-
-```
-@misc{YLearn,
-  author={Bochen Lyu，Xuefeng Li，Jian Yang},
-  title={{YLearn}: { A Python Package for Causal Inference}},
-  howpublished={https://github.com/DataCanvasIO/YLearn},
-  note={Version 0.2.x},
-  year={2022}
-}
-```
-
-## License
-See the [LICENSE](LICENSE) file for license rights and limitations (Apache-2.0).
-
-## References
-
-[1] J. Pearl. Causality: models, reasoing, and inference.
-
-[2] S. Shpister and J. Identification of Joint Interventional Distributions in Recursive Semi-Markovian Causal Models. *AAAI 2006*.
-
-[3] B. Neal. Introduction to Causal Inference.
-
-[4] M. Funk, et al. Doubly Robust Estimation of Causal Effects. *Am J Epidemiol. 2011 Apr 1;173(7):761-7.*
-
-[5] V. Chernozhukov, et al. Double Machine Learning for Treatment and Causal Parameters. *arXiv:1608.00060.*
-
-[6] S. Athey and G. Imbens. Recursive Partitioning for Heterogeneous Causal Effects. *arXiv: 1504.01132.*
-
-[7] A. Schuler, et al. A comparison of methods for model selection when estimating individual treatment effects. *arXiv:1804.05146.*
-
-[8] X. Nie, et al. Quasi-Oracle estimation of heterogeneous treatment effects. *arXiv: 1712.04912.*
-
-[9] J. Hartford, et al. Deep IV: A Flexible Approach for Counterfactual Prediction. *ICML 2017.*
-
-[10] W. Newey and J. Powell. Instrumental Variable Estimation of Nonparametric Models. *Econometrica 71, no. 5 (2003): 1565–78.*
-
-[11] S. Kunzel2019, et al. Meta-Learners for Estimating Heterogeneous Treatment Effects using Machine Learning. *arXiv: 1706.03461.*
-
-[12] J. Angrist, et al. Identification of causal effects using instrumental variables. *Journal of the American Statistical Association*.
-
-[13] S. Athey and S. Wager. Policy Learning with Observational Data. *arXiv: 1702.02896.*
-
-[14] P. Spirtes, et al. Causation, Prediction, and Search.
-
-[15] X. Zheng, et al. DAGs with NO TEARS: Continuous Optimization for Structure Learning. *arXiv: 1803.01422.*
+总之，Why工具包将不断发展壮大，为用户提供最优质的因果推理解决方案。我们诚挚地邀请您加入Why工具包的使用者和开发者社区，共同见证并推动因果推理技术的辉煌发展。
