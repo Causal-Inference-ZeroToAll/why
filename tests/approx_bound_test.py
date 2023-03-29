@@ -4,7 +4,7 @@ import pytest
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression
 
-from ylearn.estimator_model.approximation_bound import ApproxBound
+from why.estimator_model.approximation_bound import ApproxBound
 from . import _dgp
 from ._common import validate_leaner
 

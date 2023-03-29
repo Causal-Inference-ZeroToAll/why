@@ -7,8 +7,8 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.metrics import r2_score
 from sklearn.preprocessing import PolynomialFeatures
 
-from ylearn.estimator_model.double_ml import DoubleML
-from ylearn.exp_dataset.exp_data import single_continuous_treatment, single_binary_treatment
+from why.estimator_model.double_ml import DoubleML
+from why.exp_dataset.exp_data import single_continuous_treatment, single_binary_treatment
 from . import _dgp
 from ._common import validate_leaner
 

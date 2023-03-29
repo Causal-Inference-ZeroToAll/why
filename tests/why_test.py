@@ -2,13 +2,13 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from ylearn import Why
+from why import Why
 from . import _dgp
 from ._common import if_torch_ready, if_policy_tree_ready, is_policy_tree_ready
 
 try:
     import castle
-    from ylearn.causal_discovery import GCastleProxy
+    from why.causal_discovery import GCastleProxy
 
     _g = GCastleProxy()
     is_gcastle_ready = True
@@ -16,7 +16,7 @@ except ImportError:
     is_gcastle_ready = False
 
 try:
-    from ylearn.causal_discovery import PgmProxy
+    from why.causal_discovery import PgmProxy
 
     _g = PgmProxy()
     is_pgm_ready = True
@@ -43,7 +43,7 @@ def _validate_it(why, test_data, check_score=True):
 
 
 def test_smoke():
-    from ylearn.api.smoke import smoke
+    from why.api.smoke import smoke
     smoke()
 
 
@@ -306,7 +306,7 @@ def test_uplift():
 
 def test_customized_estimator():
     from sklearn.ensemble import RandomForestRegressor
-    from ylearn.estimator_model import TLearner
+    from why.estimator_model import TLearner
 
     my_estimator = TLearner(model=RandomForestRegressor())
     data, test_data, outcome, treatment, adjustment, covariate = _dgp.generate_data_x2b_y1()

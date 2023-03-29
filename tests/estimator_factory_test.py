@@ -2,7 +2,7 @@ import inspect
 
 import pytest
 
-from ylearn.estimator_model import ESTIMATOR_FACTORIES
+from why.estimator_model import ESTIMATOR_FACTORIES
 from . import _dgp
 from ._common import if_policy_tree_ready, is_policy_tree_ready, is_torch_installed
 

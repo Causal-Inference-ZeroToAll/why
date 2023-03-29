@@ -3,7 +3,7 @@ from itertools import product
 import pytest
 from sklearn import clone
 
-from ylearn.estimator_model import PermutedSLearner, PermutedTLearner, PermutedXLearner, PermutedDoublyRobust
+from why.estimator_model import PermutedSLearner, PermutedTLearner, PermutedXLearner, PermutedDoublyRobust
 from ._common import validate_leaner
 from .doubly_robust_test import _test_settings as dr_test_settings, _test_settings_x2b as dr_test_settings_x2b
 from .metalearner_test import _test_settings, _test_settings_x2b

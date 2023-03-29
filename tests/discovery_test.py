@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from ylearn.causal_discovery import CausalDiscovery
-from ylearn.exp_dataset.gen import gen
+from why.causal_discovery import CausalDiscovery
+from why.exp_dataset.gen import gen
 from ._common import if_torch_ready
 
 

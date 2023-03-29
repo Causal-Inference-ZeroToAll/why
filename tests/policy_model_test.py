@@ -8,9 +8,9 @@ np.random.seed(0)
 from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
 from sklearn.preprocessing import PolynomialFeatures
 
-from ylearn.exp_dataset.exp_data import single_continuous_treatment, single_binary_treatment
-from ylearn.estimator_model.double_ml import DoubleML
-from ylearn.effect_interpreter.ce_interpreter import CEInterpreter
+from why.exp_dataset.exp_data import single_continuous_treatment, single_binary_treatment
+from why.estimator_model.double_ml import DoubleML
+from why.effect_interpreter.ce_interpreter import CEInterpreter
 
 import pytest
 

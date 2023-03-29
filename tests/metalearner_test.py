@@ -5,7 +5,7 @@ from sklearn import clone
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.linear_model import LinearRegression
 
-from ylearn.estimator_model.meta_learner import SLearner, TLearner, XLearner
+from why.estimator_model.meta_learner import SLearner, TLearner, XLearner
 from . import _dgp
 from ._common import validate_leaner
 

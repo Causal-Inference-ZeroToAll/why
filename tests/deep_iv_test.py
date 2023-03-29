@@ -9,7 +9,7 @@ from .iv_test import validate_it
 try:
     import torch
     import torch.nn.functional as F
-    from ylearn.estimator_model.deepiv import DeepIV
+    from why.estimator_model.deepiv import DeepIV
 except ImportError:
     pass
 

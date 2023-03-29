@@ -2,7 +2,7 @@ import numpy as np
 from numpy.random import binomial, multivariate_normal, uniform
 from sklearn.model_selection import train_test_split
 
-from ylearn.utils import to_df
+from why.utils import to_df
 
 TRAIN_SIZE = 1000
 TEST_SIZE = 200

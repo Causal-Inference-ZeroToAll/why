@@ -3,14 +3,14 @@ import pandas as pd
 import pytest
 
 try:
-    from ylearn.estimator_model.causal_tree import CausalTree
+    from why.estimator_model.causal_tree import CausalTree
 
     is_causal_tree_ready = True
 except ImportError:
     is_causal_tree_ready = False
 
 try:
-    from ylearn.policy.policy_model import PolicyTree
+    from why.policy.policy_model import PolicyTree
 
     is_policy_tree_ready = True
 except ImportError:

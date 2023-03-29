@@ -2,7 +2,7 @@ import pytest
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestClassifier
 from sklearn.linear_model import LinearRegression
 
-from ylearn.estimator_model.doubly_robust import DoublyRobust
+from why.estimator_model.doubly_robust import DoublyRobust
 from . import _dgp
 from ._common import validate_leaner
 

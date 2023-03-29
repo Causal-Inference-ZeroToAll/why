@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
-from ylearn.estimator_model.iv import NP2SLS
+from why.estimator_model.iv import NP2SLS
 from . import _dgp
 
 

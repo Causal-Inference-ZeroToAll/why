@@ -56,7 +56,7 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# import ylearn
+# import why
 # print("cwd: ")
 # print(os.getcwd())
 # build_cmd = f"cd ../.. && {sys.executable} setup.py build_ext --inplace"

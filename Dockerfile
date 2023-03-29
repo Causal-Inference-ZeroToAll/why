@@ -31,4 +31,4 @@ ENV NotebookToken="" \
 
 CMD ["/entrypoint.sh"]
 
-# docker run --rm --name ylearn -p 8888:8888 -e NotebookToken=your-token  datacanvas/ylearn
+# docker run --rm --name why -p 8888:8888 -e NotebookToken=your-token  datacanvas/why

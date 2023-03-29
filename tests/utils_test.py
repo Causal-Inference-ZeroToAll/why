@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from ylearn.estimator_model.utils import nd_kron
-from ylearn.utils import tit, tit_report, tic_toc
+from why.estimator_model.utils import nd_kron
+from why.utils import tit, tit_report, tic_toc
 
 
 def _nd_kron_original(x, y):

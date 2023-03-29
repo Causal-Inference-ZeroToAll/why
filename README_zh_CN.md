@@ -17,7 +17,7 @@
 最直接的安装方式可以通过`pip`进行安装:
 
 ```bash
-pip install ylearn
+pip install why
 ```
 
 注意：YLearn在绘制因果图时需要用到`Graphviz`，所以请在运行YLearn之前安装它。关于`Graphviz`的安装方式请参考 https://graphviz.org/download/ 。
@@ -28,7 +28,7 @@ pip install ylearn
 也可以使用 conda 安装 YLearn，命令如下：
 
 ```bash
-conda install -c conda-forge ylearn
+conda install -c conda-forge why
 ```
 
 此命令将安装YLearn和所有依赖包（包括 `Graphviz`）。
@@ -57,13 +57,13 @@ conda install -c pytorch pytorch
 下载镜像:
 
 ```bash
-docker pull datacanvas/ylearn
+docker pull datacanvas/why
 ```
 
 运行镜像:
 
 ```bash
-docker run -ti -e NotebookToken="your-token" -p 8888:8888 datacanvas/ylearn
+docker run -ti -e NotebookToken="your-token" -p 8888:8888 datacanvas/why
 ```
 然后通过浏览器访问 “ http://&lt;ip-addr&gt;:8888 ”，输入您设置的token就可以开始使用YLearn了。
 
@@ -145,17 +145,18 @@ YLearn 有5个主要的因果推断相关概念，如下所示
    **(2)** 定义一个 `list` 记录不可观测的潜在混淆曲线，其中 `list` 中的每一个元素包括一条不可观测潜在混淆曲线的两个端点:
 
    ```python
-        from ylearn.causal_model.graph import CausalGraph
-        causation_unob = {
-            'X': ['Z2'],
-            'Z1': ['X', 'Z2'],
-            'Y': ['Z1', 'Z3'],
-            'Z3': ['Z2'],
-            'Z2': [], 
-        }
-        arcs = [('X', 'Z2'), ('X', 'Z3'), ('X', 'Y'), ('Z2', 'Y')]
+        from why.causal_model.graph import CausalGraph
 
-        cg_unob = CausalGraph(causation=causation_unob, latent_confounding_arcs=arcs)
+causation_unob = {
+   'X': ['Z2'],
+   'Z1': ['X', 'Z2'],
+   'Y': ['Z1', 'Z3'],
+   'Z3': ['Z2'],
+   'Z2': [],
+}
+arcs = [('X', 'Z2'), ('X', 'Z3'), ('X', 'Y'), ('Z2', 'Y')]
+
+cg_unob = CausalGraph(causation=causation_unob, latent_confounding_arcs=arcs)
    ```
 
 2. **因果效应识别**
@@ -207,7 +208,7 @@ YLearn 有5个主要的因果推断相关概念，如下所示
     ```python
         from sklearn.datasets import fetch_california_housing
 
-        from ylearn import Why
+        from why import Why
 
         housing = fetch_california_housing(as_frame=True)
         data = housing.frame

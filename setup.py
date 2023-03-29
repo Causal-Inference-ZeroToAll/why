@@ -9,7 +9,7 @@ from os import path as P
 import numpy
 from setuptools import setup, Extension, find_packages
 
-my_name = 'ylearn'
+my_name = 'why'
 home_url = 'https://github.com/DataCanvasIO/YLearn'
 
 excludes_on_windows = ['torch', ]
@@ -242,14 +242,14 @@ setup(
     ],
     packages=find_packages(exclude=('docs', 'tests', 'example_usages')),
     package_data={
-        'ylearn': ['*.txt', '**/**.txt', '**/**.cpp', '**/**.pyx', '**/**.pxd', '**/**.h', ],
+        'why': ['*.txt', '**/**.txt', '**/**.cpp', '**/**.pyx', '**/**.pxd', '**/**.h', ],
     },
     ext_modules=c_modules + pyx_modules,
     include_dirs=[np_include] + my_includes,
     zip_safe=False,
     # entry_points={
     #     # 'console_scripts': [
-    #     #     'why = ylearn.foo:main',
+    #     #     'why = why.foo:main',
     #     # ],
     # },
     include_package_data=True,
@@ -259,4 +259,4 @@ setup(
 #     python setup.py build_ext --inplace
 #
 # build extension 'sklearn_ex' and 'grf._criterion':
-#     EXTPATH=ylearn/sklearn_ex,ylearn/estimator_model/_generalized_forest/tree/_criterion.pyx  python setup.py build_ext --inplace
+#     EXTPATH=why/sklearn_ex,why/estimator_model/_generalized_forest/tree/_criterion.pyx  python setup.py build_ext --inplace

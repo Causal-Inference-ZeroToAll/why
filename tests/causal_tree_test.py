@@ -14,7 +14,7 @@ _test_settings = {
 @if_causal_tree_ready
 @pytest.mark.parametrize('dg', _test_settings.keys())
 def test_causal_tree(dg):
-    from ylearn.estimator_model.causal_tree import CausalTree
+    from why.estimator_model.causal_tree import CausalTree
 
     options = _test_settings[dg]
     dr = CausalTree(**options)
